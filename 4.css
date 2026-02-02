@@ -1,0 +1,128 @@
+/* Стили для DMC 4 */
+.part-characters {
+    margin: 60px 0;
+}
+
+.part-characters h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.character {
+    background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--gray);
+}
+
+.character:hover {
+    transform: translateY(-10px);
+    border-color: var(--purple);
+    box-shadow: 0 15px 30px rgba(106, 13, 173, 0.3);
+}
+
+.character-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 3px solid var(--red);
+}
+
+.character h3 {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    padding: 20px 20px 10px;
+    color: var(--white);
+}
+
+.character-role {
+    color: var(--red);
+    font-weight: 700;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.character p:last-child {
+    padding: 0 20px 20px;
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Специальные цвета для персонажей DMC 4 */
+.character:nth-child(1) .character-image { border-color: #ff6b6b; } /* Неро - красный */
+.character:nth-child(2) .character-image { border-color: #4ecdc4; } /* Кири - бирюзовый */
+.character:nth-child(3) .character-image { border-color: #ffe66d; } /* Санктус - желтый */
+.character:nth-child(4) .character-image { border-color: #95e1d3; } /* Агнус - голубой */
+
+/* Анимация для Devil Bringer */
+@keyframes devilBringerGlow {
+    0%, 100% { 
+        box-shadow: 0 0 10px rgba(202, 10, 10, 0.5);
+    }
+    50% { 
+        box-shadow: 0 0 25px rgba(202, 10, 10, 0.8);
+    }
+}
+
+.character:hover .character-image {
+    animation: devilBringerGlow 1.5s infinite;
+}
+
+/* Стили для особенностей DMC 4 */
+.feature:nth-child(1) i { color: #ff6b6b; } /* Devil Bringer - красный */
+.feature:nth-child(2) i { color: #ffa726; } /* Exceed - оранжевый */
+.feature:nth-child(3) i { color: #9d00ff; } /* Два протагониста - фиолетовый */
+.feature:nth-child(4) i { color: #00bfff; } /* HD графика - голубой */
+
+/* Эффект для кнопок DMC 4 */
+.dmc4-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.dmc4-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+.dmc4-btn:hover::before {
+    left: 100%;
+}
+
+/* Адаптивность для DMC 4 */
+@media (max-width: 992px) {
+    .characters-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .characters-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .character-image {
+        height: 180px;
+    }
+}

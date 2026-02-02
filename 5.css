@@ -1,0 +1,257 @@
+/* Стили для DMC 5 */
+.part-protagonists {
+    margin: 60px 0;
+}
+
+.part-protagonists h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.protagonists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.protagonist {
+    background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: 2px solid transparent;
+    position: relative;
+}
+
+.protagonist:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.protagonist-image {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.protagonist-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(26, 26, 26, 1), transparent);
+}
+
+.protagonist h3 {
+    font-family: var(--font-title);
+    font-size: 1.8rem;
+    padding: 20px 20px 10px;
+    color: var(--white);
+    position: relative;
+    z-index: 1;
+}
+
+.protagonist-weapon {
+    color: var(--red);
+    font-weight: 700;
+    padding: 0 20px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+}
+
+.protagonist p {
+    padding: 0 20px 20px;
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+.protagonist-theme {
+    background: rgba(51, 51, 51, 0.7);
+    padding: 15px 20px;
+    margin-top: 15px;
+    border-top: 1px solid var(--gray);
+    color: var(--purple);
+    font-family: var(--font-title);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Цвета для протагонистов */
+.protagonist:nth-child(1) {
+    border-color: #ff6b6b;
+}
+.protagonist:nth-child(1):hover {
+    box-shadow: 0 20px 40px rgba(255, 107, 107, 0.3);
+}
+
+.protagonist:nth-child(2) {
+    border-color: #4ecdc4;
+}
+.protagonist:nth-child(2):hover {
+    box-shadow: 0 20px 40px rgba(78, 205, 196, 0.3);
+}
+
+.protagonist:nth-child(3) {
+    border-color: #9d00ff;
+}
+.protagonist:nth-child(3):hover {
+    box-shadow: 0 20px 40px rgba(157, 0, 255, 0.3);
+}
+
+/* Наследие DMC 5 */
+.part-legacy {
+    margin: 80px 0 40px;
+    padding: 40px;
+    background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
+    border-radius: 15px;
+    border: 2px solid var(--red);
+    position: relative;
+    overflow: hidden;
+}
+
+.part-legacy::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/black-paper.png');
+    opacity: 0.1;
+}
+
+.part-legacy h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.legacy-content {
+    position: relative;
+    z-index: 1;
+}
+
+.legacy-content p {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #eee;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.legacy-stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.stat {
+    text-align: center;
+    min-width: 150px;
+}
+
+.stat-number {
+    display: block;
+    font-family: var(--font-title);
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--red);
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(202, 10, 10, 0.5);
+}
+
+.stat-label {
+    display: block;
+    color: #aaa;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Кнопка финала */
+.final-btn {
+    background: linear-gradient(90deg, var(--red), var(--purple)) !important;
+    color: white !important;
+    border: none !important;
+    cursor: default !important;
+    opacity: 0.9 !important;
+}
+
+.final-btn:hover {
+    transform: none !important;
+    box-shadow: 0 0 20px rgba(202, 10, 10, 0.5) !important;
+    opacity: 1 !important;
+}
+
+/* Особенности DMC 5 */
+.feature:nth-child(1) i { color: #ff6b6b; } /* Три протагониста */
+.feature:nth-child(2) i { color: #00bfff; } /* Devil Breaker */
+.feature:nth-child(3) i { color: #9d00ff; } /* Кооператив */
+.feature:nth-child(4) i { color: #ffa726; } /* Дерево Qliphoth */
+
+/* Анимация для Devil Breaker */
+@keyframes devilBreakerPulse {
+    0%, 100% { 
+        transform: scale(1);
+        box-shadow: 0 0 10px currentColor;
+    }
+    50% { 
+        transform: scale(1.05);
+        box-shadow: 0 0 25px currentColor;
+    }
+}
+
+.protagonist:hover .protagonist-theme {
+    animation: devilBreakerPulse 2s infinite;
+}
+
+/* Адаптивность для DMC 5 */
+@media (max-width: 992px) {
+    .protagonists-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .legacy-stats {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .protagonists-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .protagonist-image {
+        height: 220px;
+    }
+    
+    .legacy-stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .stat {
+        min-width: 200px;
+    }
+    
+    .part-legacy {
+        padding: 30px 20px;
+    }
+}
